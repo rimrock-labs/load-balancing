@@ -1,0 +1,216 @@
+[gd_scene load_steps=3 format=3 uid="uid://r1daqf8fuslk"]
+
+[ext_resource type="Script" path="res://CanvasControl.cs" id="1_i5dxf"]
+[ext_resource type="Script" path="res://RootControl.cs" id="1_lgii0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_lgii0")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 300
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label4" type="Label" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hasher"
+
+[node name="Hasher" type="LineEdit" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Crc32"
+placeholder_text = "System.IO.Hashing.?"
+
+[node name="Label3" type="Label" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Instance Count"
+
+[node name="Instances" type="SpinBox" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 1.0
+max_value = 1000.0
+page = 10.0
+value = 25.0
+
+[node name="Label" type="Label" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Servers"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Server" type="LineEdit" parent="HSplitContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HSplitContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "➕"
+
+[node name="Button2" type="Button" parent="HSplitContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "➖"
+
+[node name="Servers" type="ItemList" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+auto_height = true
+item_count = 5
+item_0/text = "agent1"
+item_1/text = "agent2"
+item_2/text = "agent3"
+item_3/text = "agent4"
+item_4/text = "agent5"
+
+[node name="Label2" type="Label" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Work Items"
+
+[node name="WorkItems" type="CodeEdit" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "[
+    \"work1\",
+    \"work2\",
+    \"work3\",
+    \"work4\",
+    \"work5\",
+    \"work6\",
+    \"work7\",
+    \"work8\",
+    \"work9\",
+    \"work10\",
+    \"work11\",
+    \"work12\",
+    \"work13\",
+    \"work14\",
+    \"work15\",
+    \"work16\",
+    \"work17\",
+    \"work18\",
+    \"work19\",
+    \"work20\",
+    \"work21\",
+    \"work22\",
+    \"work23\",
+    \"work24\",
+    \"work25\",
+    \"work26\",
+    \"work27\",
+    \"work28\",
+    \"work29\",
+    \"work30\",
+    \"work31\",
+    \"work32\",
+    \"work33\",
+    \"work34\",
+    \"work35\",
+    \"work36\",
+    \"work37\",
+    \"work38\",
+    \"work39\",
+    \"work40\",
+    \"work41\",
+    \"work42\",
+    \"work43\",
+    \"work44\",
+    \"work45\",
+    \"work46\",
+    \"work47\",
+    \"work48\",
+    \"work49\",
+    \"work50\",
+    \"work51\",
+    \"work52\",
+    \"work53\",
+    \"work54\",
+    \"work55\",
+    \"work56\",
+    \"work57\",
+    \"work58\",
+    \"work59\",
+    \"work60\",
+    \"work61\",
+    \"work62\",
+    \"work63\",
+    \"work64\",
+    \"work65\",
+    \"work66\",
+    \"work67\",
+    \"work68\",
+    \"work69\",
+    \"work70\",
+    \"work71\",
+    \"work72\",
+    \"work73\",
+    \"work74\",
+    \"work75\",
+    \"work76\",
+    \"work77\",
+    \"work78\",
+    \"work79\",
+    \"work80\",
+    \"work81\",
+    \"work82\",
+    \"work83\",
+    \"work84\",
+    \"work85\",
+    \"work86\",
+    \"work87\",
+    \"work88\",
+    \"work89\",
+    \"work90\",
+    \"work91\",
+    \"work92\",
+    \"work93\",
+    \"work94\",
+    \"work95\",
+    \"work96\",
+    \"work97\",
+    \"work98\",
+    \"work99\",
+    \"work100\"
+]"
+placeholder_text = "Json array of string to load blanace."
+
+[node name="HSeparator" type="HSeparator" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="HSplitContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load Balance"
+
+[node name="Canvas" type="Control" parent="HSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("1_i5dxf")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="HSplitContainer/ScrollContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_add_server_pressed"]
+[connection signal="pressed" from="HSplitContainer/ScrollContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_remove_server_pressed"]
+[connection signal="pressed" from="HSplitContainer/ScrollContainer/VBoxContainer/Button2" to="." method="_on_refresh_pressed"]
