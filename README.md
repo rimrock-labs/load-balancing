@@ -1,4 +1,4 @@
-# Load Balancing
+# 💍 Hash Ring Load Balancing
 
 A simple, single class, dotnet 6.0+ implementation of a consistent hash-based load balancer.
 
